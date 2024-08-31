@@ -13,6 +13,11 @@ module timer #(
     output 							  timer_value  // Output the current value of the timer
 );
 
+    reg internal_enable = 0;
+    always @(posedge enable) begin
+        internal_enable <= ~internal_enable;
+    end
+    
     reg [15:0] counter1 = 0;                        // Clock cycle counter
     reg [$clog2(MAX_MS)-1:0] count2 = 0;            // Nanosecond counter
     wire count_up = up;                                   // Direction flag for counting up or down
@@ -26,7 +31,7 @@ module timer #(
             end else begin
                 count2 <= start_value;              // Start from start_value if counting down
             end
-        end else if (enable) begin
+        end else if (internal_enable) begin
             if (counter1 >= CLKS_PER_MS - 1) begin
                 counter1 <= 0;
                 if (count_up) begin
