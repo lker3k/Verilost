@@ -1,21 +1,18 @@
-`timescale 1ns/1ns /* This directive () specifies simulation <time unit>/<time precision>. */
+`timescale 1ns/1ns /* This directive specifies simulation <time unit>/<time precision>. */
 
 module timer_tb;
     // Step 1: Define test bench variables and clock:
     reg         clk = 0;
     reg         reset = 0;
-    reg         up = 1;
-    reg         start_value = 2047;
     reg         enable = 1; // Inputs as register data type (so we can assign them in the initial block)
-    wire        max_reached;
-    wire        timer_value; // Outputs as wire data type (as they are assigned by the DUT)
+    wire        max_reached; // Outputs as wire data type (as they are assigned by the DUT)
 
     // reg clk; // (Clock not needed for this simulation.)
 
     // Step 2: Instantiate Device Under Test:
     timer DUT( // Instantiate the 'Device Under Test' (DUT), an instance of the timer module.
-        .clk(clk), .reset(reset), .up(up), .start_value(start_value), .enable(enable), // Connect inputs to their respective testbench variables.
-        .max_reached(max_reached), .timer_value(timer_value)  // Connect outputs to their respective testbench variables.
+        .clk(clk), .reset(reset), .enable(enable), // Connect inputs to their respective testbench variables.
+        .max_reached(max_reached)  // Connect outputs to their respective testbench variables.
     );
     // ^^^ Connects ports of the instantiated module to variables in this module with the same port/variable name.
 
@@ -30,12 +27,12 @@ module timer_tb;
 
         repeat(15) begin // Generate random input stimuli (15 times):
             // Set each input bit to random value (0 or 1):
-            //{clk, reset, up, start_value, enable} = 5'($urandom()); // Generate a random unsigned 32-bit value ($urandom), then cast it (5') to a 5-bit value. The inputs clk, reset, up, start_value, enable are then assigned to each bit of this value (in the order: MSB to LSB).
-            // ^^^ We use the LHS concatenation operator here to efficiently assign each of the 5 inputs to a random 1-bit value.
+            //{clk, reset, enable} = 3'($urandom()); // Generate a random unsigned 32-bit value ($urandom), then cast it (3') to a 3-bit value. The inputs clk, reset, enable are then assigned to each bit of this value (in the order: MSB to LSB).
+            // ^^^ We use the LHS concatenation operator here to efficiently assign each of the 3 inputs to a random 1-bit value.
             // Log input and output values:
-            $display("Inputs: \tclk: %b, reset: %b, up: %b, start_value: %b, enable: %b", clk, reset, up, start_value, enable); // Print inputs to stdout.
+            $display("Inputs: \tclk: %b, reset: %b, enable: %b", clk, reset, enable); // Print inputs to stdout.
             #10; // Delay for 10 time units to ensure the simulator evaluates the DUT outputs before the next line.
-            $display("Outputs:\tmax_reached: %b, timer_value: %b", max_reached, timer_value); // Print outputs to stdout.
+            $display("Outputs:\tmax_reached: %b", max_reached); // Print outputs to stdout.
             $display("======================================");
             #10; // Delay for a further 10 time units to provide a total of 20 time units between input changes (as the clock period is 20 time units).
         end
