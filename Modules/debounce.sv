@@ -1,5 +1,6 @@
+
 module debounce #(
-  parameter DELAY_COUNTS = 2500 // 50us with clk period 20ns is ____ counts
+  parameter DELAY_COUNTS = 10 // 50us with clk period 20ns is ____ counts
 ) (
     input clk, button,
     output reg button_pressed
@@ -13,18 +14,23 @@ module debounce #(
   
 
   /*** Fill in the following scaffold: ***/
-  reg [11:0]count;
+  reg [11:0] count;
+  initial count = 0;
+  
   reg prev_button;
+  initial prev_button = 0;
+  
+  initial button_pressed = 0;
   // Set the count flip-flop:
   always @(posedge clk) begin
       if (button_sync != prev_button) begin
         count <= 0;
       end
       else if (count == DELAY_COUNTS) begin
-        count <= count + 0;
+        count <= count;
       end
       else begin
-        count <= count + 1;
+        count <= 1 + count;
       end
   end
 
@@ -33,17 +39,19 @@ module debounce #(
     if (button_sync != prev_button) begin
       prev_button <= button_sync;
     end
-    else;
+    else begin
+      prev_button <= prev_button;
+    end
   end
 
   // Set the button_pressed flip-flop:
   always @(posedge clk) begin
     if (button_sync == prev_button && count == DELAY_COUNTS) begin
-      button_pressed <= button_sync;
+      button_pressed <= prev_button;
     end
-    else;
+    else begin
+      button_pressed <= button_pressed;
+    end
   end
 
 endmodule
-
-
