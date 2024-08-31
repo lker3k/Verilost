@@ -1,4 +1,4 @@
-module counter_tb;
+module rng_tb;
     // Step 1: Define test bench variables and clock:
     reg         clk = 0;
     reg         reset = 1;
