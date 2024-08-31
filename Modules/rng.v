@@ -20,7 +20,7 @@ module counter #(
     reg [17:0] current_value;
 
     always @(posedge clk or negedge reset) begin
-        if (!reset) begin
+        if (reset) begin
             lfsr <= 18'b0; // Adjust the width here
             random_value <= 0;
         end 
