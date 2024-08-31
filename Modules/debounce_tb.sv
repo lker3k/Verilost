@@ -14,9 +14,8 @@ module debounce_tb;
     // Clock generation: 20ns clock period (50 MHz)
     initial begin
         clk = 0;
-        forever #10 clk = ~clk;
+        forever #1 clk = ~clk;
     end
-	 
 
     // Test procedure
     initial begin
@@ -24,12 +23,15 @@ module debounce_tb;
         $dumpvars();
         // Initialize signals
         button = 0;
-			
+
         // Apply the first button press (bouncing scenario)
         #100 button = 1;
         #50  button = 0;  // Bouncing to 0 quickly
-        #50  button = 1;  // Button settles to 1
-        #50;
+		  #50  button = 1;
+        #5  button = 0;  // Button settles to 1
+		  #5 button = 1;
+		  #15 button = 0;
+        #100;
         $display("button_pressed: %b", button_pressed);
 
         //TODO:
