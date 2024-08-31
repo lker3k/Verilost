@@ -14,7 +14,7 @@ module timer #(
     reg [$clog2(MAX_MS)-1:0] count2 = 0;            // Millisecond counter
 
     always @(posedge clk) begin
-        if (reset) begin                            // Synchronous reset
+        if (!reset) begin                            // Synchronous reset
             counter1 <= 0;
             count2 <= 0;
             max_reached <= 0;                       // Reset max_reached flag
