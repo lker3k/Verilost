@@ -1,8 +1,8 @@
 `timescale 1ns/1ns /* This directive () specifies simulation <time unit>/<time precision>. */
 
 module timer #(
-    parameter MAX_MS = 2047,            // Maximum nanoseconds before the output goes high
-    parameter CLKS_PER_MS = 50000        // Number of clock cycles in a nanosecond for a 20 MHz clock (1/20MHz = 50ns)
+    parameter MAX_MS = 2047,            // Maximum milliseconds before the output goes high
+    parameter CLKS_PER_MS = 50000        // Number of clock cycles in a milliseconds for a 20 MHz clock (1/20MHz = 50ns)
 ) (
     input                       clk,
     input                       reset,
