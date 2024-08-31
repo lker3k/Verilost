@@ -1,4 +1,4 @@
-module counter #(
+module rng #(
   parameter OFFSET = 1, // base number 1 for 1 LED (minimum moles)
     parameter MAX_VALUE = 2622143, // Maximum value for the output
     parameter SEED = 123457        // random choosing point
