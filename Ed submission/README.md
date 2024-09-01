@@ -6,6 +6,14 @@ To simulate the integrated modules, use the integration_script.sh in the Integra
 
 The Final folder does not contain test benches, it is the code that was running on hardware. This is because some changes we made after and was only run on hardware, without going back and testbenching
 
+# Testing
+
+Individual modules are within the Modules folder, they can be run with the module_script.sh file, eg the rng module can be tested with rng_script.sh
+
+To simulate the integrated modules, use the integration_script.sh in the Integration folder.
+
+The Final folder does not contain test benches, it is the code that was running on hardware. This is because some changes we made after and was only run on hardware, without going back and testbenching
+
 # Testbenches for Verilog Modules
 
 This README provides an overview of multiple Verilog testbenches used to simulate and verify the functionality of various digital modules. Each testbench is designed to validate a specific module under different scenarios to ensure correct behavior and performance.
@@ -64,5 +72,26 @@ To run any of the testbenches, you will need a Verilog simulation tool such as M
 
    ```bash
    iverilog -o bit_counter_tb.vvp bit_counter_tb.v
+
+4. Run the simulation:
+   ```bash
+   vvp bit_counter_tb.vvp
+
+5. Open the generated waveform.vcd file in a waveform viewer to observe the signals:
+
+   ```bash
+   gtkwave waveform.vcd
+
+6. Repeat steps 3 to 5 for each testbench file you want to simulate.
+
+## Future Enhancements
+1. Add More Test Scenarios: Expand test cases to include edge cases and stress tests for each module.
+   
+2. Parameterized Testing: Introduce parameterization to the testbenches for easier testing of different configurations.
+   
+3. Automated Testing Suite: Develop scripts to automate the compilation and execution of all testbenches.
+
+## Conclusion.
+This suite of testbenches provides a comprehensive environment to verify the functionality of various digital modules. By applying a range of input stimuli and observing the outputs, these testbenches help ensure that each module behaves as expected under different conditions.
 
 
