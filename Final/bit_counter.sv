@@ -27,7 +27,7 @@ module bit_counter(
 	always_comb begin : bonus_logic
 		
 		// 2x points for hitting more than half the moles
-		if (hit_num >= 9) begin
+		if (hit_num > 9) begin
 			bonus = 2;
 		end
 		else begin
