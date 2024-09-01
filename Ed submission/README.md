@@ -22,7 +22,7 @@ This README provides an overview of multiple Verilog testbenches used to simulat
 
 The following testbenches are included in this suite:
 
-1. **`bit_counter_tb`**: Tests the functionality of the `bit_counter` module.
+1. **`bit_counter_tb`**: Tests the functionality of the `hit_counter` module.
 2. **`debounce_tb`**: Verifies the debounce logic for a noisy button input.
 3. **`display_tb`**: Simulates a module that drives a 7-segment display.
 4. **`rng_tb`**: Tests a random number generator (RNG) module.
