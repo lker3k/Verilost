@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="111" />
+   <irq preferredWidth="34" />
+   <opcodeName preferredWidth="376" />
+   <name preferredWidth="380" />
+   <export preferredWidth="311" />
+   <inputclock preferredWidth="257" />
+   <description preferredWidth="454" />
+   <endaddress preferredWidth="75" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Project,Library/University Program/Audio &amp; Video,Library/University Program/Generic IO,Library/University Program/Audio &amp; Video/Video,Library,Library/University Program/Communications,Library/University Program" />
+ <window width="3488" height="2072" x="-16" y="-16" />
+ <generation path="vga" simulation="VERILOG" />
+</preferences>

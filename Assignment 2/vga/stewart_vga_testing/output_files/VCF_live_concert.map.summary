@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Sep 19 11:19:42 2024
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : VCF_live_concert
+Top-level Entity Name : top_level
+Family : Cyclone IV E
+Total logic elements : 237
+    Total combinational functions : 203
+    Dedicated logic registers : 116
+Total registers : 116
+Total pins : 48
+Total virtual pins : 0
+Total memory bits : 921,600
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
