@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="127" />
+   <irq preferredWidth="34" />
+   <opcodeName preferredWidth="376" />
+   <name preferredWidth="380" />
+   <export preferredWidth="311" />
+   <inputclock preferredWidth="257" />
+   <description preferredWidth="454" />
+   <endaddress preferredWidth="75" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Project,Library" />
+ <window width="3456" height="2040" x="0" y="0" />
+ <generation path="_PROJECT_NAME_/" simulation="VERILOG" />
+</preferences>
