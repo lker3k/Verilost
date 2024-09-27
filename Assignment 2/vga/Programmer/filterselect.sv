@@ -54,6 +54,9 @@ module filterselect (
 
 
     always_ff @(posedge clk) begin : next_filter_logic
+		if (reset) begin
+			current_filter <= NOFILTER;
+		end
         current_filter <= next_filter;
     end
 
@@ -77,7 +80,7 @@ module filterselect (
     localparam N_INSTRS = 11; // Change this to the number of instructions you have below:
     logic [8:0] instructions [N_INSTRS];//= '{CLEAR_DISPLAY, _H, _e, _l, _l, _o, _SPACE, _W, _o, _r, _l, _d, _EXCLAMATION}; // Clear display then display "Hi".
     // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data.
-    always_comb begin
+    /*always_comb begin
         if          (NOFILTER) begin instructions       = '{CLEAR_DISPLAY, _N, _o, _SPACE, _F, _i, _l, _t, _e, _r};
         end else if (DESATURATE) begin instructions     = '{CLEAR_DISPLAY, _D, _e, _s, _a, _t, _u, _r, _a, _t, _e};
         end else if (COLOURSHIFT) begin instructions    = '{CLEAR_DISPLAY, _S, _h, _i, _f, _t};
@@ -85,7 +88,18 @@ module filterselect (
         end else if (EDGE) begin instructions           = '{CLEAR_DISPLAY, _E, _d, _g, _e};
         end else begin instructions                     = '{CLEAR_DISPLAY, _E, _R, _R, _O, _R, _EXCLAMATION};
         end
-    end
+    end*/
+	 always_comb begin
+		case (current_filter)
+			NOFILTER 	: instructions = '{CLEAR_DISPLAY, _N, _o, _SPACE, _F, _i, _l, _t, _e, _r, _SPACE};
+			DESATURATE 	: instructions = '{CLEAR_DISPLAY, _D, _e, _s, _a, _t, _u, _r, _a, _t, _e};
+			COLOURSHIFT : instructions = '{CLEAR_DISPLAY, _S, _h, _i, _f, _t, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
+			BLUR 			: instructions = '{CLEAR_DISPLAY, _B, _l, _u, _r, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
+			EDGE			: instructions = '{CLEAR_DISPLAY, _E, _d, _g, _e, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE, _SPACE};
+			default		: instructions = '{CLEAR_DISPLAY, _E, _R, _R, _O, _R, _EXCLAMATION, _SPACE, _SPACE, _SPACE, _SPACE};
+		endcase
+	 end
+	 
     //........................................................................................
     //........................................................................................
     // LCD FSM
@@ -95,7 +109,7 @@ module filterselect (
         if (reset) begin
             instruction_index <= 0;
             next_instruction_index <= 0;
-
+				
         end else begin
             current_state <= next_state;
              case (current_state)
