@@ -1,0 +1,16 @@
+
+WORK > DEFAULT
+DEFAULT:                ./libraries/work/                  
+work:                   ./libraries/work/                  
+channel_adapter_0:      ./libraries/channel_adapter_0/     
+rst_controller:         ./libraries/rst_controller/        
+avalon_st_adapter:      ./libraries/avalon_st_adapter/     
+video_vga_controller_0: ./libraries/video_vga_controller_0/
+video_scaler_0:         ./libraries/video_scaler_0/        
+vga_face_0:             ./libraries/vga_face_0/            
+altera_ver:             ./libraries/altera_ver/            
+lpm_ver:                ./libraries/lpm_ver/               
+sgate_ver:              ./libraries/sgate_ver/             
+altera_mf_ver:          ./libraries/altera_mf_ver/         
+altera_lnsim_ver:       ./libraries/altera_lnsim_ver/      
+cycloneive_ver:         ./libraries/cycloneive_ver/        
