@@ -1,0 +1,351 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/leban/MTRX3700/assignment_2_convolution/simulation/modelsim
+valtera_reset_controller
+Z1 !s110 1727408737
+!i10b 1
+!s100 oA9lUzaO95KXSKU3fUHXM0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IMG@<6heVHIBMZVOA6gKkJ3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1727404538
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_controller.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_controller.v
+!i122 212
+L0 42 278
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1727408736.000000
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_controller.v|
+!i113 1
+Z7 o-vlog01compat -work vga
+Z8 !s92 -vlog01compat -work vga +incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules
+Z9 tCvgOpt 0
+valtera_reset_synchronizer
+R1
+!i10b 1
+!s100 D^dgdIfBaVUo6:<:oWOdC3
+R2
+IPC_g5Fh6Zez@`NAmdB8TT0
+R3
+R0
+R4
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_synchronizer.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_synchronizer.v
+!i122 213
+L0 24 63
+R5
+r1
+!s85 0
+31
+Z10 !s108 1727408737.000000
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_reset_synchronizer.v|
+!i113 1
+R7
+R8
+R9
+valtera_up_altpll
+Z11 !s110 1727408738
+!i10b 1
+!s100 Qh9XW<jmao=OfhU=18]mT3
+R2
+I;ZeLDl?JQGN?k`8o:=?Ff2
+R3
+R0
+R4
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_altpll.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_altpll.v
+!i122 222
+L0 29 179
+R5
+r1
+!s85 0
+31
+Z12 !s108 1727408738.000000
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_altpll.v|
+!i113 1
+R7
+R8
+R9
+valtera_up_avalon_reset_from_locked_signal
+R11
+!i10b 1
+!s100 M=9_04l@6_AZV7M5XIfUS3
+R2
+IKi_=cUeI8cL`87>>EkfYW3
+R3
+R0
+R4
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v
+!i122 221
+L0 28 65
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v|
+!i113 1
+R7
+R8
+R9
+valtera_up_avalon_video_vga_timing
+R1
+!i10b 1
+!s100 Y?G3iXfFEWm_]Oc`G1;KT2
+R2
+I<^ZIHB78DPLZ?VKlbZ6l:0
+R3
+R0
+Z13 w1727404537
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_video_vga_timing.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_video_vga_timing.v
+!i122 215
+L0 28 293
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_video_vga_timing.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_avalon_video_vga_timing.v|
+!i113 1
+R7
+R8
+R9
+valtera_up_video_scaler_multiply_height
+R1
+!i10b 1
+!s100 IeBz_A0fM@RNk_71oYF[n3
+R2
+I;OG]`OCLGAk2[C:]HH5Ij2
+R3
+R0
+R13
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_height.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_height.v
+!i122 218
+L0 28 283
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_height.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_height.v|
+!i113 1
+R7
+R8
+R9
+valtera_up_video_scaler_multiply_width
+R1
+!i10b 1
+!s100 D`UDDiTbaa?SHCZ=NVzhX2
+R2
+I?:M18OJ4HeMcRHLhN?OfJ0
+R3
+R0
+R13
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_width.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_width.v
+!i122 217
+L0 28 166
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_width.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/altera_up_video_scaler_multiply_width.v|
+!i113 1
+R7
+R8
+R9
+vvga
+!s110 1727408736
+!i10b 1
+!s100 hX=hS]mFJKn56G7OT==<<2
+R2
+IMd9]mVzU[Yz988[XU0MfH2
+R3
+R0
+w1727404536
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/vga.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/vga.v
+!i122 211
+L0 6 252
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/vga.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/vga.v|
+!i113 1
+R7
+!s92 -vlog01compat -work vga +incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis
+R9
+vvga_avalon_st_adapter
+R1
+!i10b 1
+!s100 2FZYZf]P9N1M08beR?CF_1
+R2
+II>alBL4<cV7z?j8F[DQU73
+R3
+R0
+R4
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter.v
+!i122 214
+L0 9 202
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter.v|
+!i113 1
+R7
+R8
+R9
+vvga_avalon_st_adapter_channel_adapter_0
+Z14 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+R11
+!i10b 1
+!s100 n7U8fCi=ao@QzQE`1WHo^3
+R2
+IF6cWk<<JH;F7eSfP=5?IR1
+R3
+S1
+R0
+R4
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter_channel_adapter_0.sv
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter_channel_adapter_0.sv
+!i122 223
+L0 55 40
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter_channel_adapter_0.sv|
+!s90 -reportprogress|300|-sv|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_avalon_st_adapter_channel_adapter_0.sv|
+!i113 1
+Z15 o-sv -work vga
+Z16 !s92 -sv -work vga +incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules
+R9
+vvga_face
+R14
+R11
+!i10b 1
+!s100 @zB[DkeFaGWjCzY_6Bzzm2
+R2
+IRVlEn5^I][[B:?2^U_3=W0
+R3
+S1
+R0
+w1727406115
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_face.sv
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_face.sv
+!i122 224
+L0 1 312
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_face.sv|
+!s90 -reportprogress|300|-sv|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_face.sv|
+!i113 1
+R15
+R16
+R9
+vvga_video_pll_0
+R1
+!i10b 1
+!s100 X3XV2L;cH8H0ZlJaL`9oe0
+R2
+Ik0h];P@?kD7Y@MCZMz;cK0
+R3
+R0
+R13
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_pll_0.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_pll_0.v
+!i122 220
+L0 9 33
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_pll_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_pll_0.v|
+!i113 1
+R7
+R8
+R9
+vvga_video_scaler_0
+R1
+!i10b 1
+!s100 Ce[9iER^8:M29ajTjOBNG1
+R2
+I?M<Hz84OK<JGIT8j>k0b00
+R3
+R0
+R13
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_scaler_0.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_scaler_0.v
+!i122 219
+L0 28 187
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_scaler_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_scaler_0.v|
+!i113 1
+R7
+R8
+R9
+vvga_video_vga_controller_0
+R1
+!i10b 1
+!s100 Bn1RFbhHoI@>L2VC;SNBA0
+R2
+IJ@emXNm0i_m^_W7h_[XZO2
+R3
+R0
+R13
+8C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_vga_controller_0.v
+FC:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_vga_controller_0.v
+!i122 216
+L0 28 259
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_vga_controller_0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|vga|+incdir+C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules|C:/Users/leban/MTRX3700/assignment_2_convolution/vga/synthesis/submodules/vga_video_vga_controller_0.v|
+!i113 1
+R7
+R8
+R9
