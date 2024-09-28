@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 28 20:46:23 2024
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : VerilogCam
+Top-level Entity Name : top_level
+Family : Cyclone IV E
+Total logic elements : 1,264
+    Total combinational functions : 1,131
+    Dedicated logic registers : 719
+Total registers : 719
+Total pins : 82
+Total virtual pins : 0
+Total memory bits : 1,585,664
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
