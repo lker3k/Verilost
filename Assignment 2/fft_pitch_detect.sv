@@ -23,7 +23,7 @@ module fft_pitch_detect (
     logic           mag_valid;
     logic   [W*2:0] mag_sq;
 	 
-	 integer decimate_counter = 0;
+	 integer decimate_counter = 3;
     dstream #(.N(2*W))    conv_input   ();
     dstream #(.N(2*W))    conv_output  ();
     dstream #(.N(W))      pitch_input  ();
