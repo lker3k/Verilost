@@ -1,0 +1,29 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\lwat0045\Documents\LCD\char_display.qsys --block-symbol-file --output-directory=C:\Users\lwat0045\Documents\LCD\char_display --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading LCD/char_display.qsys
+Progress: Reading input file
+Progress: Adding character_lcd_0 [altera_up_avalon_character_lcd 18.0]
+Progress: Parameterizing module character_lcd_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\lwat0045\Documents\LCD\char_display.qsys --synthesis=VERILOG --output-directory=C:\Users\lwat0045\Documents\LCD\char_display\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading LCD/char_display.qsys
+Progress: Reading input file
+Progress: Adding character_lcd_0 [altera_up_avalon_character_lcd 18.0]
+Progress: Parameterizing module character_lcd_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: char_display: Generating char_display "char_display" for QUARTUS_SYNTH
+Info: character_lcd_0: Starting Generation of Character LCD
+Info: character_lcd_0: "char_display" instantiated altera_up_avalon_character_lcd "character_lcd_0"
+Info: char_display: Done "char_display" with 2 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
