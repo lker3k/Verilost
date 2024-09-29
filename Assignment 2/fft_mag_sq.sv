@@ -10,8 +10,7 @@ module fft_mag_sq #(
     output logic         mag_valid
 );
 
-    // Your code here!
-	  // Pipeline registers
+   // Pipeline registers
     logic signed [W*2-1:0] multiply_stage_real_reg, multiply_stage_imag_reg;
     logic signed [W*2:0]   add_stage_reg;
     logic [1:0]            valid_shift_reg;

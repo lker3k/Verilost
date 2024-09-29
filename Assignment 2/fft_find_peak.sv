@@ -1,8 +1,8 @@
+`timescale 1ns/1ns
 module fft_find_peak #(
     parameter NSamples = 1024, // 1024 N-points
     parameter W        = 33,   // For 16x2 + 1
-	parameter NBits    = $clog2(NSamples)
-
+    parameter NBits    = $clog2(NSamples)
 ) (
     input                        clk,
     input                        reset,
@@ -12,10 +12,7 @@ module fft_find_peak #(
     output logic [NBits-1:0]     peak_k = 0,
     output logic                 peak_valid
 );
-
-    // Your code here!
-	 logic [NBits-1:0] i = 0, k = 0;
-	 
+    logic [NBits-1:0] i = 0, k;
 
     always_comb begin
         // Bit-reversed index computation
@@ -62,5 +59,4 @@ module fft_find_peak #(
             end
         end
     end
-
 endmodule
