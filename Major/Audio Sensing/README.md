@@ -6,3 +6,5 @@ All you need to do is copy&paste your solution code from Lessons 3 and 4:
 * `fft_mag_sq.sv`
 * `mic/mic_load.sv`
 * `mic/i2c_master.sv`
+
+no the code has to be edited for mic.sv and other functionalities like top level. Updating to avoid confusion
