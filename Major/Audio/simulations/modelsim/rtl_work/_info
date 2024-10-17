@@ -1,0 +1,593 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/mtrx3700/mic/mic/simulation/modelsim
+vadc_pll
+Z1 !s110 1728955071
+!i10b 1
+!s100 0S>C[^42j:Fn<MPPkb^351
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IV63]KN<G:H@IhKfMMc`2j0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1728918086
+8D:/mtrx3700/mic/mic/mic/adc_pll.v
+FD:/mtrx3700/mic/mic/mic/adc_pll.v
+!i122 1
+Z5 L0 40 124
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1728955071.000000
+!s107 D:/mtrx3700/mic/mic/mic/adc_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/mic|D:/mtrx3700/mic/mic/mic/adc_pll.v|
+!i113 1
+Z8 o-vlog01compat -work work
+Z9 !s92 -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/mic
+Z10 tCvgOpt 0
+vadc_pll_altpll
+R1
+!i10b 1
+!s100 1D5A018;X@68g?C@m:^Be0
+R2
+IXiGA7=96@=@]>D0K4j@gU2
+R3
+R0
+Z11 w1728918586
+8D:/mtrx3700/mic/mic/db/adc_pll_altpll.v
+FD:/mtrx3700/mic/mic/db/adc_pll_altpll.v
+!i122 3
+Z12 L0 31 79
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/db/adc_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/db|D:/mtrx3700/mic/mic/db/adc_pll_altpll.v|
+!i113 1
+R8
+Z13 !s92 -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/db
+R10
+vasync_fifo
+R1
+!i10b 1
+!s100 YOPJF8=iHjQRbK[jPmMDV2
+R2
+I`^d>@89ajTJbNPaQh<AB33
+R3
+R0
+Z14 w1728918084
+8D:/mtrx3700/mic/mic/async_fifo.v
+FD:/mtrx3700/mic/mic/async_fifo.v
+!i122 2
+L0 40 67
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/async_fifo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/async_fifo.v|
+!i113 1
+R8
+!s92 -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic
+R10
+vButterfly
+R1
+!i10b 1
+!s100 mD9[K_6J2jaEozc9DnS<n1
+R2
+IcbRW21?66JVj?SzVO`zeB0
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/r22sdf/butterfly.v
+FD:/mtrx3700/mic/mic/r22sdf/butterfly.v
+!i122 7
+Z15 L0 4 29
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/r22sdf/butterfly.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/r22sdf|D:/mtrx3700/mic/mic/r22sdf/butterfly.v|
+!i113 1
+R8
+Z16 !s92 -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf
+R10
+n@butterfly
+vDelayBuffer
+R1
+!i10b 1
+!s100 _gZ`L@Y_[IYVb_4>B44Dk1
+R2
+I]8W4Y9IeCSdPJ4IF<:9_63
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/r22sdf/delaybuffer.v
+FD:/mtrx3700/mic/mic/r22sdf/delaybuffer.v
+!i122 8
+R15
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/r22sdf/delaybuffer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/r22sdf|D:/mtrx3700/mic/mic/r22sdf/delaybuffer.v|
+!i113 1
+R8
+R16
+R10
+n@delay@buffer
+vdisplay
+Z17 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z18 !s110 1728955072
+!i10b 1
+!s100 ^n@8zJ6X8?U=JJ2`X>=kF0
+R2
+I;3>_e<]WdFh;AUXT:2E2f2
+R3
+S1
+R0
+R14
+8D:/mtrx3700/mic/mic/display.sv
+FD:/mtrx3700/mic/mic/display.sv
+!i122 13
+L0 1 92
+R6
+r1
+!s85 0
+31
+Z19 !s108 1728955072.000000
+!s107 D:/mtrx3700/mic/mic/display.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/display.sv|
+!i113 1
+Z20 o-sv -work work
+Z21 !s92 -sv -work work +incdir+D:/mtrx3700/mic/mic
+R10
+Ydstream
+R17
+R18
+!i10b 1
+!s100 WZWVJBZ7c7h3kG6SgNGiP0
+R2
+IoGZ5EbYJjDOZ<ASWBbhg@2
+R3
+S1
+R0
+R14
+8D:/mtrx3700/mic/mic/dstream.sv
+FD:/mtrx3700/mic/mic/dstream.sv
+!i122 11
+L0 1 0
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/dstream.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/dstream.sv|
+!i113 1
+R20
+R21
+R10
+vFFT
+R1
+!i10b 1
+!s100 Wo4C_QZnU?k8]HdWFd0;Z0
+R2
+I7OoT]hl[MTo2Cm=n=d=gg3
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/r22sdf/fft.v
+FD:/mtrx3700/mic/mic/r22sdf/fft.v
+!i122 5
+L0 4 86
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/r22sdf/fft.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/r22sdf|D:/mtrx3700/mic/mic/r22sdf/fft.v|
+!i113 1
+R8
+R16
+R10
+n@f@f@t
+vfft_find_peak
+R17
+R18
+!i10b 1
+!s100 >KfK3g18KRZTHUR27`cL13
+R2
+IAD:[?ZoLVfTb;a03d3YKC2
+R3
+S1
+R0
+w1728918272
+8D:/mtrx3700/mic/mic/fft_find_peak.sv
+FD:/mtrx3700/mic/mic/fft_find_peak.sv
+!i122 14
+L0 1 61
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/fft_find_peak.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/fft_find_peak.sv|
+!i113 1
+R20
+R21
+R10
+vfft_input_buffer
+R17
+Z22 !s110 1728955073
+!i10b 1
+!s100 ES>3KBDdY];^c3WQ`[Nh51
+R2
+IAQQd7C=N3z^fShdTOnA4^2
+R3
+S1
+R0
+w1728918346
+8D:/mtrx3700/mic/mic/fft_input_buffer.sv
+FD:/mtrx3700/mic/mic/fft_input_buffer.sv
+!i122 21
+L0 1 78
+R6
+r1
+!s85 0
+31
+Z23 !s108 1728955073.000000
+!s107 D:/mtrx3700/mic/mic/fft_input_buffer.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/fft_input_buffer.sv|
+!i113 1
+R20
+R21
+R10
+vfft_mag_sq
+R17
+R18
+!i10b 1
+!s100 C=OcYKjBHAQgI5Q?73F5R2
+R2
+IBnib]hZKm<2gfLKJ=;cI13
+R3
+S1
+R0
+w1728918332
+8D:/mtrx3700/mic/mic/fft_mag_sq.sv
+FD:/mtrx3700/mic/mic/fft_mag_sq.sv
+!i122 15
+L0 1 42
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/fft_mag_sq.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/fft_mag_sq.sv|
+!i113 1
+R20
+R21
+R10
+vfft_pitch_detect
+R17
+R22
+!i10b 1
+!s100 zR<Tl>AJB:>WeC9[iULl43
+R2
+Ico;T=``b9V;z^9fNVREnk3
+R3
+S1
+R0
+R14
+8D:/mtrx3700/mic/mic/fft_pitch_detect.sv
+FD:/mtrx3700/mic/mic/fft_pitch_detect.sv
+!i122 19
+L0 1 64
+R6
+r1
+!s85 0
+31
+R23
+!s107 D:/mtrx3700/mic/mic/fft_pitch_detect.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/fft_pitch_detect.sv|
+!i113 1
+R20
+R21
+R10
+vfft_pitch_detect_tb
+R17
+R22
+!i10b 1
+!s100 `UkiX^g3=4IlDP5Ho`>5T3
+R2
+IAF3`CYG:Ez^Kl6cHM]]DU0
+R3
+S1
+R0
+w1728954800
+8D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv
+FD:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv
+!i122 22
+L0 2 74
+R6
+r1
+!s85 0
+31
+R23
+!s107 D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv|
+!i113 1
+R20
+R21
+R10
+vi2c_master
+R17
+R18
+!i10b 1
+!s100 4^zP2T6E1JDb;3FV`NYOa1
+R2
+I:f>_81ZZ1k:PES<46Zk8m0
+R3
+S1
+R0
+w1728918404
+8D:/mtrx3700/mic/mic/mic/i2c_master.sv
+FD:/mtrx3700/mic/mic/mic/i2c_master.sv
+!i122 17
+L0 1 106
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/mic/i2c_master.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic/mic|D:/mtrx3700/mic/mic/mic/i2c_master.sv|
+!i113 1
+R20
+Z24 !s92 -sv -work work +incdir+D:/mtrx3700/mic/mic/mic
+R10
+vi2c_pll
+R1
+!i10b 1
+!s100 Vk9TfF@R;RMHD@^mOm0OO2
+R2
+IZR`C4Zj^_hYNKo5B=zgK?3
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/mic/i2c_pll.v
+FD:/mtrx3700/mic/mic/mic/i2c_pll.v
+!i122 0
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/mic/i2c_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/mic|D:/mtrx3700/mic/mic/mic/i2c_pll.v|
+!i113 1
+R8
+R9
+R10
+vi2c_pll_altpll
+R1
+!i10b 1
+!s100 ?S>B5kH_OB`5LmF95Q<Xe2
+R2
+IO<DA9OVNUTzAeC:lozX2O0
+R3
+R0
+R11
+8D:/mtrx3700/mic/mic/db/i2c_pll_altpll.v
+FD:/mtrx3700/mic/mic/db/i2c_pll_altpll.v
+!i122 4
+R12
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/db/i2c_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/db|D:/mtrx3700/mic/mic/db/i2c_pll_altpll.v|
+!i113 1
+R8
+R13
+R10
+vmic_load
+R17
+R22
+!i10b 1
+!s100 :10]IkQE4h_ZJJ<TVDI?_2
+R2
+I18:WYlX6h]PnlJ6BV9OXP2
+R3
+S1
+R0
+w1728920974
+8D:/mtrx3700/mic/mic/mic/mic_load.sv
+FD:/mtrx3700/mic/mic/mic/mic_load.sv
+!i122 18
+L0 2 43
+R6
+r1
+!s85 0
+31
+R23
+!s107 D:/mtrx3700/mic/mic/mic/mic_load.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic/mic|D:/mtrx3700/mic/mic/mic/mic_load.sv|
+!i113 1
+R20
+R24
+R10
+vMultiply
+R18
+!i10b 1
+!s100 0R?lW[z@TZO1j7GeLBf:c0
+R2
+I7;_aJRCbZ@CkgRfBkBLJQ2
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/r22sdf/multiply.v
+FD:/mtrx3700/mic/mic/r22sdf/multiply.v
+!i122 10
+L0 4 32
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/r22sdf/multiply.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/r22sdf|D:/mtrx3700/mic/mic/r22sdf/multiply.v|
+!i113 1
+R8
+R16
+R10
+n@multiply
+vSdfUnit
+R1
+!i10b 1
+!s100 [c]A0JM<bSobO[TghoBi@0
+R2
+I^69l=Wz_iAj`N2E98hPSn2
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/r22sdf/sdfunit.v
+FD:/mtrx3700/mic/mic/r22sdf/sdfunit.v
+!i122 6
+L0 4 274
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/r22sdf/sdfunit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/r22sdf|D:/mtrx3700/mic/mic/r22sdf/sdfunit.v|
+!i113 1
+R8
+R16
+R10
+n@sdf@unit
+vset_audio_encoder
+R17
+R18
+!i10b 1
+!s100 m^;NOeXEfc^RiiIidmhPB1
+R2
+IH7HRBU[amOiHZFW>hY2B32
+R3
+S1
+R0
+R4
+8D:/mtrx3700/mic/mic/mic/set_audio_encoder.sv
+FD:/mtrx3700/mic/mic/mic/set_audio_encoder.sv
+!i122 16
+L0 1 59
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/mic/set_audio_encoder.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic/mic|D:/mtrx3700/mic/mic/mic/set_audio_encoder.sv|
+!i113 1
+R20
+R24
+R10
+vseven_seg
+R17
+R18
+!i10b 1
+!s100 MBHFg6UghcTacA]LCgWL>2
+R2
+I>4zlkWADdeQL;]`7`L[Ve3
+R3
+S1
+R0
+R4
+8D:/mtrx3700/mic/mic/seven_seg.sv
+FD:/mtrx3700/mic/mic/seven_seg.sv
+!i122 12
+L0 1 22
+R6
+r1
+!s85 0
+31
+R19
+!s107 D:/mtrx3700/mic/mic/seven_seg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/seven_seg.sv|
+!i113 1
+R20
+R21
+R10
+vtop_level
+R17
+R22
+!i10b 1
+!s100 MWLb;RU2MFUZ3?hkT4AHo1
+R2
+IYlA`MO5be_A:?A6;Fcaam1
+R3
+S1
+R0
+R4
+8D:/mtrx3700/mic/mic/top_level.sv
+FD:/mtrx3700/mic/mic/top_level.sv
+!i122 20
+L0 1 52
+R6
+r1
+!s85 0
+31
+R23
+!s107 D:/mtrx3700/mic/mic/top_level.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+D:/mtrx3700/mic/mic|D:/mtrx3700/mic/mic/top_level.sv|
+!i113 1
+R20
+R21
+R10
+vTwiddle
+R1
+!i10b 1
+!s100 SzaA`;]cC62MNaJ:il<Eg0
+R2
+Iac1KmVcGI@`0m6EhAGdXL2
+R3
+R0
+R4
+8D:/mtrx3700/mic/mic/r22sdf/twiddle.v
+FD:/mtrx3700/mic/mic/r22sdf/twiddle.v
+!i122 9
+L0 4 1060
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/mtrx3700/mic/mic/r22sdf/twiddle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/mtrx3700/mic/mic/r22sdf|D:/mtrx3700/mic/mic/r22sdf/twiddle.v|
+!i113 1
+R8
+R16
+R10
+n@twiddle
