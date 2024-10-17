@@ -35,14 +35,22 @@ assign	EX_IO   	=	7'bzz;
 
 
 // The following might be better to include in top level instead:
-//logic button1, button2, button3, button4;
-//reg [31:0] output_data;
+//======================================================
+// IR Remote Logic
 
-//assign button1 = (output_data[31:16] == 16'hfe01);
-//assign button2 = (output_data[31:16] == 16'hfd02);
-//assign button3 = (output_data[31:16] == 16'hfc03);
-//assign button4 = (output_data[31:16] == 16'hfb04);
-//==================================
+//logic button1, button2, button3, button4;
+//logic mute_button;
+//wire [31:0] hex_data; // Put this part if not already declared earlier
+
+//IR_control ir_control(.*); // Definitely put this part only in top-level
+
+//assign button1 = (hex_data[31:16] == 16'hfe01);
+//assign button2 = (hex_data[31:16] == 16'hfd02);
+//assign button3 = (hex_data[31:16] == 16'hfc03);
+//assign button4 = (hex_data[31:16] == 16'hfb04);
+
+//assign mute_button = (output_data[31:16] == 16'hf30c);
+//======================================================
 
 
 //=============================================================================
