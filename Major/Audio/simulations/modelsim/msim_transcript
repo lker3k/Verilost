@@ -1,0 +1,369 @@
+# Reading pref.tcl
+# do FFT_stream_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/mic {D:/mtrx3700/mic/mic/mic/i2c_pll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/mic" D:/mtrx3700/mic/mic/mic/i2c_pll.v 
+# -- Compiling module i2c_pll
+# 
+# Top level modules:
+# 	i2c_pll
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/mic {D:/mtrx3700/mic/mic/mic/adc_pll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/mic" D:/mtrx3700/mic/mic/mic/adc_pll.v 
+# -- Compiling module adc_pll
+# 
+# Top level modules:
+# 	adc_pll
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/async_fifo.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/async_fifo.v 
+# -- Compiling module async_fifo
+# 
+# Top level modules:
+# 	async_fifo
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/db {D:/mtrx3700/mic/mic/db/adc_pll_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/db" D:/mtrx3700/mic/mic/db/adc_pll_altpll.v 
+# -- Compiling module adc_pll_altpll
+# 
+# Top level modules:
+# 	adc_pll_altpll
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/db {D:/mtrx3700/mic/mic/db/i2c_pll_altpll.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/db" D:/mtrx3700/mic/mic/db/i2c_pll_altpll.v 
+# -- Compiling module i2c_pll_altpll
+# 
+# Top level modules:
+# 	i2c_pll_altpll
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf {D:/mtrx3700/mic/mic/r22sdf/fft.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/r22sdf" D:/mtrx3700/mic/mic/r22sdf/fft.v 
+# -- Compiling module FFT
+# 
+# Top level modules:
+# 	FFT
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf {D:/mtrx3700/mic/mic/r22sdf/sdfunit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/r22sdf" D:/mtrx3700/mic/mic/r22sdf/sdfunit.v 
+# -- Compiling module SdfUnit
+# 
+# Top level modules:
+# 	SdfUnit
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf {D:/mtrx3700/mic/mic/r22sdf/butterfly.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/r22sdf" D:/mtrx3700/mic/mic/r22sdf/butterfly.v 
+# -- Compiling module Butterfly
+# 
+# Top level modules:
+# 	Butterfly
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf {D:/mtrx3700/mic/mic/r22sdf/delaybuffer.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/r22sdf" D:/mtrx3700/mic/mic/r22sdf/delaybuffer.v 
+# -- Compiling module DelayBuffer
+# 
+# Top level modules:
+# 	DelayBuffer
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf {D:/mtrx3700/mic/mic/r22sdf/twiddle.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:51 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/r22sdf" D:/mtrx3700/mic/mic/r22sdf/twiddle.v 
+# -- Compiling module Twiddle
+# 
+# Top level modules:
+# 	Twiddle
+# End time: 12:17:51 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/mtrx3700/mic/mic/r22sdf {D:/mtrx3700/mic/mic/r22sdf/multiply.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/mtrx3700/mic/mic/r22sdf" D:/mtrx3700/mic/mic/r22sdf/multiply.v 
+# -- Compiling module Multiply
+# 
+# Top level modules:
+# 	Multiply
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/dstream.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/dstream.sv 
+# -- Compiling interface dstream
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/seven_seg.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/seven_seg.sv 
+# -- Compiling module seven_seg
+# 
+# Top level modules:
+# 	seven_seg
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/display.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/display.sv 
+# -- Compiling module display
+# 
+# Top level modules:
+# 	display
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/fft_find_peak.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/fft_find_peak.sv 
+# -- Compiling module fft_find_peak
+# 
+# Top level modules:
+# 	fft_find_peak
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/fft_mag_sq.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/fft_mag_sq.sv 
+# -- Compiling module fft_mag_sq
+# 
+# Top level modules:
+# 	fft_mag_sq
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic/mic {D:/mtrx3700/mic/mic/mic/set_audio_encoder.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic/mic" D:/mtrx3700/mic/mic/mic/set_audio_encoder.sv 
+# -- Compiling module set_audio_encoder
+# 
+# Top level modules:
+# 	set_audio_encoder
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic/mic {D:/mtrx3700/mic/mic/mic/i2c_master.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:52 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic/mic" D:/mtrx3700/mic/mic/mic/i2c_master.sv 
+# -- Compiling module i2c_master
+# 
+# Top level modules:
+# 	i2c_master
+# End time: 12:17:52 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic/mic {D:/mtrx3700/mic/mic/mic/mic_load.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:53 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic/mic" D:/mtrx3700/mic/mic/mic/mic_load.sv 
+# -- Compiling module mic_load
+# 
+# Top level modules:
+# 	mic_load
+# End time: 12:17:53 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/fft_pitch_detect.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:53 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/fft_pitch_detect.sv 
+# -- Compiling module fft_pitch_detect
+# 
+# Top level modules:
+# 	fft_pitch_detect
+# End time: 12:17:53 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/top_level.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:53 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/top_level.sv 
+# -- Compiling module top_level
+# 
+# Top level modules:
+# 	top_level
+# End time: 12:17:53 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/fft_input_buffer.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:53 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/fft_input_buffer.sv 
+# -- Compiling module fft_input_buffer
+# 
+# Top level modules:
+# 	fft_input_buffer
+# End time: 12:17:53 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+D:/mtrx3700/mic/mic {D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:17:53 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+D:/mtrx3700/mic/mic" D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv 
+# -- Compiling module fft_pitch_detect_tb
+# 
+# Top level modules:
+# 	fft_pitch_detect_tb
+# End time: 12:17:53 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  fft_pitch_detect_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" fft_pitch_detect_tb 
+# Start time: 12:17:53 on Oct 15,2024
+# Loading sv_std.std
+# Loading work.fft_pitch_detect_tb
+# Loading work.dstream
+# Loading work.fft_pitch_detect
+# Loading work.fft_input_buffer
+# Loading work.async_fifo
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading work.FFT
+# Loading work.SdfUnit
+# Loading work.Butterfly
+# Loading work.DelayBuffer
+# Loading work.Twiddle
+# Loading work.Multiply
+# Loading work.fft_mag_sq
+# Loading work.fft_find_peak
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DCFIFO_MW'.  Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /fft_pitch_detect_tb/DUT/u_fft_input_buffer/u_fifo/dcfifo_component/DCFIFO_MW File: $MODEL_TECH/../altera/verilog/src/altera_mf.v Line: 31791
+# ** Warning: (vsim-3722) $MODEL_TECH/../altera/verilog/src/altera_mf.v(31791): [TFMPC] - Missing connection for port 'eccstatus'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time            411575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time            719675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           1027775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# ** Note: $finish    : D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv(39)
+#    Time: 1032775 ns  Iteration: 0  Instance: /fft_pitch_detect_tb
+# 1
+# Break in NamedBeginStat test_procedure at D:/mtrx3700/mic/mic/fft_pitch_detect_tb.sv line 39
+run -all
+# Time           1335875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           1643975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           1952075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           2260175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           2568275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           2876375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           3184475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           3492575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           3800675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           4108775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           4416875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           4724975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           5033075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           5341175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           5649275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           5957375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           6265475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           6573575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           6881675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           7189775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           7497875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           7805975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           8114075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           8422175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           8730275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           9038375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           9346475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           9654575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time           9962675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          10270775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          10578875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          10886975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          11195075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          11503175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          11811275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          12119375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          12427475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          12735575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          13043675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          13351775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          13659875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          13967975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          14276075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          14584175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          14892275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          15200375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          15508475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          15816575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          16124675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          16432775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          16740875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          17048975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          17357075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          17665175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          17973275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          18281375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          18589475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          18897575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          19205675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          19513775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          19821875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          20129975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          20438075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          20746175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          21054275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          21362375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          21670475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          21978575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          22286675000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          22594775000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          22902875000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          23210975000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          23519075000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          23827175000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          24135275000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          24443375000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          24751475000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Time          25059575000: Detected peak frequency bin: 21, Frequency: 984.38 Hz
+# Break key hit
+# Break in Module DelayBuffer at D:/mtrx3700/mic/mic/r22sdf/delaybuffer.v line 21
+# End time: 13:10:13 on Oct 15,2024, Elapsed time: 0:52:20
+# Errors: 0, Warnings: 2
