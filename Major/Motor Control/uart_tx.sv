@@ -1,5 +1,6 @@
  module uart_tx #(
-      parameter CLKS_PER_BIT = (50_000_000/115_200), // E.g. Baud_rate = 115200 with FPGA clk = 50MHz
+      parameter CLKS_PER_BIT = (5/*50_000_000/115_200*/), // E.g. Baud_rate = 115200 with FPGA clk = 50MHz
+		// 5 for tb/ 50000000/115200 for real
       parameter BITS_N       = 8, // Number of data bits per UART frame
       parameter PARITY_TYPE  = 0  // 0 for none, 1 for odd parity, 2 for even.
 ) (
