@@ -1,0 +1,71 @@
+module tb_top_level;
+
+  // Inputs
+  reg CLOCK_50;
+  reg [3:0] KEY;
+  wire [35:0] GPIO;
+
+  // Outputs
+  wire [7:0] LEDR;
+  wire [7:0] LEDG;
+
+  // Internal signals
+  wire trigger;
+  reg echo;
+  assign GPIO[34] = echo;   // Echo signal from the sensor
+  assign GPIO[35] = trigger; // Trigger signal to the sensor
+
+  // Instantiate the top-level module
+  top_level uut (
+    .CLOCK_50(CLOCK_50),
+    .GPIO(GPIO),
+    .KEY(KEY),
+    .LEDR(LEDR),
+    .LEDG(LEDG)
+  );
+
+  // Clock generation
+  initial begin
+    CLOCK_50 = 0;
+    forever #10 CLOCK_50 = ~CLOCK_50; // Clock with a 20ns period
+  end
+
+  // Simulation setup
+  initial begin
+    // Initialize inputs
+    KEY = 4'b1111;   // Buttons not pressed
+    echo = 0;        // No echo initially
+
+    // Wait for 100 ns for global reset to finish
+    #100;
+
+    // Test case 1: Press start button (KEY[3])
+    KEY[3] = 0;   // Simulate start button press
+    #20;
+    KEY[3] = 1;   // Release start button
+
+    // Simulate sensor echo after some delay
+    #100;
+    echo = 1;     // Echo goes high (sensor response)
+    #50;
+    echo = 0;     // Echo goes low
+
+    // Test case 2: Press reset button (KEY[2])
+    #200;
+    KEY[2] = 0;   // Simulate reset button press
+    #20;
+    KEY[2] = 1;   // Release reset button
+
+    // Additional test cases can be added as needed
+
+    // Finish simulation after some time
+    #1000;
+    $stop;
+  end
+
+  // Monitor the outputs
+  initial begin
+    $monitor("At time %0t: LEDR = %0h, LEDG[0] = %0b", $time, LEDR, LEDG[0]);
+  end
+
+endmodule

@@ -1,0 +1,3 @@
+module change_start_condition (
+	input proximity_sensor,
+	output start

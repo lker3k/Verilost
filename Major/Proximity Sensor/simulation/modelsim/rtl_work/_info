@@ -1,0 +1,115 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/simulation/modelsim
+vdebounce
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1729130022
+!i10b 1
+!s100 [;J`7Z[kFZ?EdoLK`=Vkl2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXe6o3R8?4m>HXQkaCYY3G0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1728471417
+8C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/debounce.sv
+FC:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/debounce.sv
+!i122 2
+L0 1 25
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1729130022.000000
+!s107 C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/debounce.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project|C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/debounce.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work {+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project}
+Z9 tCvgOpt 0
+vrefresher250ms
+R1
+R2
+!i10b 1
+!s100 FS[E1HLFoJH]D_4Cn1?@b2
+R3
+ID792nMTDEP>MKn^7m8[JC3
+R4
+S1
+R0
+Z10 w1729125156
+Z11 8C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/sensor_driver.sv
+Z12 FC:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/sensor_driver.sv
+!i122 0
+L0 125 16
+R5
+r1
+!s85 0
+31
+Z13 !s108 1729130021.000000
+Z14 !s107 C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/sensor_driver.sv|
+Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project|C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/sensor_driver.sv|
+!i113 1
+R7
+R8
+R9
+vsensor_driver
+R1
+R2
+!i10b 1
+!s100 GhGBjQB;o7z^jZ3;cfc<d1
+R3
+IQoXl[2]Oh>`bHKiA7Gkof0
+R4
+S1
+R0
+R10
+R11
+R12
+!i122 0
+L0 6 117
+R5
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R7
+R8
+R9
+vtop_level
+R1
+R2
+!i10b 1
+!s100 on=Bg4In>DJz0c=AlReTV2
+R3
+Ie6KRd44]aOz4?P[lbmB=V0
+R4
+S1
+R0
+w1729129366
+8C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/top_level.sv
+FC:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/top_level.sv
+!i122 1
+L0 1 32
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/top_level.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project|C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/top_level.sv|
+!i113 1
+R7
+R8
+R9

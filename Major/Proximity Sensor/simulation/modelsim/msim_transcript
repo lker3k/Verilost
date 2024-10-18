@@ -1,0 +1,62 @@
+# Reading pref.tcl
+# do sensor_driver_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major\ Project {C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/sensor_driver.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:53:41 on Oct 17,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project" C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/sensor_driver.sv 
+# -- Compiling module sensor_driver
+# -- Compiling module refresher250ms
+# 
+# Top level modules:
+# 	sensor_driver
+# 	refresher250ms
+# End time: 12:53:42 on Oct 17,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major\ Project {C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/top_level.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:53:42 on Oct 17,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project" C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/top_level.sv 
+# -- Compiling module top_level
+# 
+# Top level modules:
+# 	top_level
+# End time: 12:53:42 on Oct 17,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major\ Project {C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/debounce.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:53:42 on Oct 17,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project" C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/debounce.sv 
+# -- Compiling module debounce
+# 
+# Top level modules:
+# 	debounce
+# End time: 12:53:42 on Oct 17,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major\ Project {C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:53:42 on Oct 17,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project" C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv 
+# -- Compiling module tb_top_level
+# ** Error: C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv(37): (vlog-2110) Illegal reference to net "GPIO".
+# ** Error: C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv(46): (vlog-2110) Illegal reference to net "GPIO".
+# ** Error: C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv(50): (vlog-2110) Illegal reference to net "GPIO".
+# ** Error: C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv(54): (vlog-2110) Illegal reference to net "GPIO".
+# ** Error: C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major Project/tb_top_level.sv(57): (vlog-2110) Illegal reference to net "GPIO".
+# End time: 12:53:42 on Oct 17,2024, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./sensor_driver_run_msim_rtl_verilog.do line 12
+# C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Major\ Project {C:/Users/georg/Downloads/MTRX3700/Quartus_Extracted/Ma..."
