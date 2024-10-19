@@ -71,7 +71,7 @@ package ascii_inst_pkg;
     localparam logic [7:0] _z = 8'd122;
 
     // Special characters
-    localparam logic [7:0] _LINE_FEED     = 8'd10;
+    localparam logic [7:0] _LINE_FEED     = 8'd10; // LF
     localparam logic [7:0] _SPACE         = 8'd32;
     localparam logic [7:0] _EXCLAMATION   = 8'd33; // !
     localparam logic [7:0] _DOUBLE_QUOTE  = 8'd34; // "

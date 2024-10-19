@@ -8,7 +8,8 @@ module top_level_tb;
     logic       reset;       // Reset signal
     logic [4:0] motor_state; // Motor state input
     logic 		 uart_out;    // UART output signal
-
+	 
+	 
     // Instantiate the top_level module
     top_level dut (
         .CLOCK_50(clk),
@@ -29,7 +30,7 @@ module top_level_tb;
         $dumpvars();
         // Initialize signals
         reset = 1;
-        motor_state = 5'b00001; // Set initial motor state to stop
+        motor_state = 5'b10000; // Set initial motor state to stop spin
 
         // Wait for a few clock cycles
         #(5 * CLK_PERIOD);
@@ -41,7 +42,7 @@ module top_level_tb;
         #(10 * CLK_PERIOD);
 
         // Test different motor commands
-        motor_state = 5'b00010; // Motor forward
+ /*       motor_state = 5'b00010; // Motor forward
         #(10 * CLK_PERIOD);
 
         motor_state = 5'b00100; // Motor right
@@ -52,9 +53,9 @@ module top_level_tb;
 
         motor_state = 5'b10000; // Motor spin
         #(10 * CLK_PERIOD);
-
+*/
         // Wait for the sequence to complete
-        #(2000 * CLK_PERIOD); // Adjust timing as needed
+        #(20000 * CLK_PERIOD); // Adjust timing as needed
 
         // Stop the simulation
         $finish();

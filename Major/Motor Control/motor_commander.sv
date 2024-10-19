@@ -5,9 +5,17 @@ module motor_commander (
     input  logic reset,
     input   logic [4:0] motor_state,
     input   logic uart_tx_ready,
+	 input logic button_pressed,
     output logic uart_tx_valid,
     output logic [7:0] uart_tx_data
 );
+
+	    logic button_q0, button_edge;
+    always_ff @(posedge clk) begin : edge_detect
+    button_q0 <= button_pressed;
+    end : edge_detect
+    assign button_edge = (button_pressed > button_q0);
+
     // State encoding for FSM
     typedef enum logic [1:0] {IDLE, SEND_OP} state_t;
     state_t current_state, next_state;
@@ -27,44 +35,45 @@ module motor_commander (
 
     // output instructions
     localparam N_INSTRS = 26; // Change this to the number of instructions you have below:
-    logic [8:0] instructions [N_INSTRS];//= '{CLEAR_DISPLAY, _H, _e, _l, _l, _o, _SPACE, _W, _o, _r, _l, _d, _EXCLAMATION}; // Clear display then display "Hi".
-    // In the above array, **bit-8 is the 1-bit `address`** and bits 7 down-to 0 give the 8-bit data. "T":1,"L":0.5,"R":0.5}
+    logic [7:0] instructions [N_INSTRS];
+  
     always_comb begin
         case(current_motor_cmd)
-            // {"T":1,"L":0.0,"R":0.0}
+            // {"T":1,"L":0.00,"R":0.00}
             MOTOR_STOP:   begin instructions    =    '{_OPEN_BRACE, _DOUBLE_QUOTE, _T, _DOUBLE_QUOTE, _COLON, _1, _COMMA,
-                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _0, _COMMA,
-                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _0, _CLOSE_BRACE, _LINE_FEED};
+                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _2, _0, _COMMA,
+                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _2, _0, _CLOSE_BRACE, _LINE_FEED};
+																						/*  '{_A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M,
+																			  _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _LINE_FEED};*/
             end      
 
-            // {"T":1,"L":0.1,"R":0.1}
+            // {"T":1,"L":0.10,"R":0.10}
             MOTOR_FORWARD: begin instructions   =    '{_OPEN_BRACE, _DOUBLE_QUOTE, _T, _DOUBLE_QUOTE, _COLON, _1, _COMMA,
-                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _5, _COMMA,
-                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _5, _CLOSE_BRACE, _LINE_FEED};
+                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _1, _0, _COMMA,
+                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _1, _0, _CLOSE_BRACE, _LINE_FEED};
             end                                            
 
-            // {"T":1,"L":0.0,"R":0.1}
+            // {"T":1,"L":0.00,"R":0.10}
             MOTOR_RIGHT: begin instructions     =    '{_OPEN_BRACE, _DOUBLE_QUOTE, _T, _DOUBLE_QUOTE, _COLON, _1, _COMMA,
                                                                     _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _0, _COMMA,
-                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _5, _CLOSE_BRACE, _LINE_FEED};
+                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _1, _0, _CLOSE_BRACE, _LINE_FEED};
             end                                 
 
             // {"T":1,"L":0.1,"R":0.0}
             MOTOR_LEFT: begin instructions      =    '{_OPEN_BRACE, _DOUBLE_QUOTE, _T, _DOUBLE_QUOTE, _COLON, _1, _COMMA,
-                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _5, _COMMA,
+                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _1, _0, _COMMA,
                                                                     _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _0, _CLOSE_BRACE, _LINE_FEED};
             end                                  
 
-            // {"T":1,"L":0.0,"R":0.0}
+            // {"T":1,"L":-0.1,"R":0.10}
             MOTOR_SPIN: begin instructions      =    '{_OPEN_BRACE, _DOUBLE_QUOTE, _T, _DOUBLE_QUOTE, _COLON, _1, _COMMA,
                                                                     _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _MINUS, _0, _PERIOD, _1, _COMMA,
                                                                     _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _1, _0, _CLOSE_BRACE, _LINE_FEED};
             end                                     
 
             // {"T":1,"L":0.0,"R":0.0}                                       
-            default: begin instructions         =        '{_OPEN_BRACE, _DOUBLE_QUOTE, _T, _DOUBLE_QUOTE, _COLON, _1, _COMMA,
-                                                                    _DOUBLE_QUOTE, _L, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _0, _COMMA,
-                                                                    _DOUBLE_QUOTE, _R, _DOUBLE_QUOTE, _COLON, _0, _PERIOD, _0, _0, _CLOSE_BRACE, _LINE_FEED};
+            default: begin instructions         =        '{_A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M,
+																			  _N, _O, _P, _Q, _R, _S, _T, _U, _V, _W, _X, _Y, _Z};
             end                                    
         endcase
     end
@@ -96,7 +105,8 @@ module motor_commander (
     always_comb begin: next_state_logic
         next_state = IDLE;
         case (current_state) 
-            IDLE:       next_state = (instruction_index < N_INSTRS) ? SEND_OP : IDLE;
+            //IDLE:       next_state = (instruction_index < N_INSTRS) ? SEND_OP : IDLE;
+				IDLE:       next_state = (button_edge) ? SEND_OP : IDLE;
             SEND_OP:   next_state = (instruction_index < N_INSTRS) ? SEND_OP : IDLE;
         endcase
     end
@@ -108,7 +118,7 @@ module motor_commander (
         case (current_state) 
             SEND_OP:   begin
                 uart_tx_valid       = 1;
-                uart_tx_data   = instructions[instruction_index][7:0];
+                uart_tx_data   = instructions[instruction_index][7:0]; 
             end
         endcase
     end
