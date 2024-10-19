@@ -41,6 +41,7 @@ input wire CLOCK_50,
 input wire [3:0] KEY,
 input wire [17:0] SW,
 output wire led_config_finished,
+/*
 output wire vga_hsync,
 output wire vga_vsync,
 output wire [7:0] vga_r,
@@ -49,6 +50,7 @@ output wire [7:0] vga_b,
 output wire vga_blank_N,
 output wire vga_sync_N,
 output wire vga_CLK,
+*/
 input wire ov7670_pclk,
 output wire ov7670_xclk,
 input wire ov7670_vsync,
@@ -70,8 +72,12 @@ wire clk_50_camera;
 wire clk_25_vga;
 wire wren;
 wire resend;
-wire nBlank;
-wire vSync;
+
+
+//wire nBlank;
+//wire vSync;
+
+
 wire [16:0] wraddress;
 wire [11:0] wrdata;
 wire [16:0] rdaddress;
@@ -90,9 +96,10 @@ wire [11:0] rddata;
   // take the inverted push button because KEY0 on DE2-115 board generates
   // a signal 111000111; with 1 with not pressed and 0 when pressed/pushed;
   assign resend =  ~KEY[0];
+  /*
   assign vga_vsync = vSync;
   assign vga_blank_N = nBlank;
-
+	*/
 
 
   ov7670_controller Inst_ov7670_controller(
@@ -122,9 +129,27 @@ wire [11:0] rddata;
     .wraddress(wraddress[16:0]),
     .data(wrdata),
     .wren(wren));
-
+	 
 integer row = 0, col = 0;
 integer row_old = 0, col_old = 0;
+
+
+
+always @(posedge clk_25_vga) begin
+	if(resend) begin
+		row <= 0;
+		col <= 0;
+	end else begin
+		if (col >= 319) begin
+			col <= 0;
+			if (row >= 239) begin
+				row <= 0;
+			end else row <= row + 1;
+		end else col <= col + 1;
+	end
+end
+
+/*
 reg vga_start, vga_end, vga_ready;
 always @(posedge clk_25_vga) begin
 	if(resend) begin
@@ -153,10 +178,10 @@ always @(*) begin
 		vga_end = 1;
 	end else vga_end = 0;
 end
-
+*/
 assign rdaddress = ((row*320) + col);
 
-/*
+
  cam_detect u_cam_detect (
 		.clk(clk_25_vga),
 		.reset(resend),
@@ -164,22 +189,28 @@ assign rdaddress = ((row*320) + col);
 		.color_mode(SW[1:0]),
 		.row(row),
 		.col(col),
+		.color_condition(LEDR[17:15]),
 		.operate_mode(LEDG[3:1])
  );
- */
+ /*
+ reg check;
+ 
+ assign LEDG[4] = check;
+ assign LEDG[5] = ~check;
 
- 
+ */
 reg [11:0] led;
- 
+
 always @(posedge clk_25_vga) begin
 	if (row == 120 && col == 160) begin
+		//check = 1;
 		led <= rddata;
 	end else;
 end
 
 assign LEDR[11:0] = led;
 
- 
+ /*
  vga u_vga (
 		.clk_clk(clk_25_vga),
 		.reset_reset_n(KEY[0]),
@@ -196,6 +227,6 @@ assign LEDR[11:0] = led;
 		.vga_G(vga_g),
 		.vga_B(vga_b)
 	);
-
+*/
 	
 endmodule

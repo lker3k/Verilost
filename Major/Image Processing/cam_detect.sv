@@ -9,6 +9,8 @@ module cam_detect(
 	input logic [18:0]	row,
 	input logic [18:0]	col,
 	
+	output logic [2:0] 	color_condition,
+	
 	
 	output logic [2:0]	operate_mode	// 2 mode for motor behaviour, 0 for scanning, 1 for going forward	
 );
@@ -21,20 +23,26 @@ module cam_detect(
 	
 	logic [2:0] current_pixel;
 	
+	logic red_logic, green_logic, blue_logic;
+	
+	assign red_logic = ((in_data[11:8] > 4'b0110) /* 70% red */ && (in_data[7:4] < 4'b0100) /* 10% green */ && (in_data[3:0] < 4'b0100)); /*10% blue*/
+	
+	assign green_logic = ((in_data[11:8] < 4'b0100) /* 10% red */ && (in_data[7:4] > 4'b0110) /* 70% green */ && (in_data[3:0] < 4'b0111)); /*10% blue*/
+
+	assign blue_logic = ((in_data[11:8] < 4'b0101) /* 10% red */ && (in_data[7:4] < 4'b1000) /* 10% green */ && (in_data[3:0] > 4'b0110)); /*70% blue*/
+	
 	// thresholded the color
 	always_comb begin
-		if (in_data[11:8] > 4'b1011) begin
-			current_pixel[2] = 1;
-		end else current_pixel[2] = 0;
-		
-		if (in_data[7:4] > 4'b1011) begin
-			current_pixel[1] = 1;
-		end else current_pixel[1] = 0;
-		
-		if (in_data[3:0] > 4'b1011) begin
-			current_pixel[0] = 1;
-		end else current_pixel[0] = 0;
+		if (red_logic) begin
+			current_pixel = 3'b100;
+		end else if (green_logic) begin
+			current_pixel = 3'b010;
+		end else if (blue_logic) begin
+			current_pixel = 3'b001;
+		end else current_pixel = 3'b000;
 	end
+	
+	assign color_condition = current_pixel;
 	
 	logic [2:0] red = 3'b100;
 	logic [2:0] green = 3'b010;
@@ -152,7 +160,9 @@ module cam_detect(
 		if (reset) begin
 			operate_mode = NO_COLOR;
 		end else begin
-			if (mid_acc == 0 && left_acc == 0 && right_acc == 0) begin
+			if (mid_acc == 0 && left_acc == 0 && right_acc == 0 && row == (image_height - 1) && col == (image_width - 1)) begin
+				operate_mode = NO_COLOR;
+			end else if (mid_acc == 0 && left_acc == 0 && right_acc == 0) begin
 			//new frame so avoid overwrite condition
 				operate_mode = operate_mode_old;
 			end else if (mid_acc >= left_acc && mid_acc >= right_acc) begin
