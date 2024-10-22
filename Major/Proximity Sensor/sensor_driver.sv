@@ -122,7 +122,7 @@ module sensor_driver#(parameter ten_us = 10'd500)(
 endmodule
 
 // timer used to measure distance at 250ms intervals - not used in top level
-module refresher333us(
+module refresher100ms(
   input clk,
   input en,
   output reg measure); // Change output to 'reg' type
