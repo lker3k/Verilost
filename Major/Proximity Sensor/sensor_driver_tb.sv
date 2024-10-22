@@ -1,73 +1,73 @@
 `timescale 1ns / 1ps
 
-module sensor_driver_tb;
+module tb_top_level;
+
 
 // Signal Declarations
-reg clk;
-reg echo;
-reg trigger = 1;
-reg start;
-reg reset;
-reg [7:0] LEDR;
-reg LEDG;
+logic CLOCK_50 = 0;
+logic [3:0] KEY;
+logic [7:0] LEDR;
+logic [7:0] LEDG;
+logic [35:0] GPIO_drive; // Signal used to drive the GPIO
+wire [35:0] GPIO;        // Actual GPIO wire
+
+// Tristate buffer: drive GPIO when GPIO_drive is not high-impedance (z)
+assign GPIO = GPIO_drive;
 
 // Clock Period Parameter
 parameter CLK_PERIOD = 20;
 
-// Clock Generation
-initial clk = 1'b0;
-always #(CLK_PERIOD / 2) clk = ~clk;
+initial CLOCK_50 = 1'b0;
+always #(CLK_PERIOD / 2) CLOCK_50 = ~CLOCK_50;
 
-// Sensor Driver Instance
-sensor_driver u0 (
-	.clk(clk),
-	.echo(echo),
-	.measure(start),
-	.rst(reset),
-	.trig(trigger),
-	.distance(LEDR),
-	.proximity_sensor(LEDG)
+// Top-Level Instance
+top_level uut (
+    .CLOCK_50(CLOCK_50),
+    .GPIO(GPIO),
+    .KEY(KEY),
+    .LEDR(LEDR),
+    .LEDG(LEDG)
 );
 
 // Testbench Logic
 initial begin
-	#(1 * CLK_PERIOD)
-	reset = 1;
-	start = 0;
-	LEDR = 0;
+    // Initialize inputs
+   KEY = 4'b1111;        // Buttons not pressed
+	LEDG = 8'b0;
+   GPIO_drive = 36'b0;   // Set GPIO to high impedance initially
+	KEY[0] = 1;
+	uut.enable = 0;
+    // Wait for global reset to finish
+   #100;
 
-	#(1 * CLK_PERIOD)
-	reset = 0;
-	start = 1;
-	
-	#(1 * CLK_PERIOD)
-	start = 1;
-	
-	#(500 * CLK_PERIOD)
-	repeat (5) begin // Repeat the echo high-low cycle a few times
-		echo = 1;
-		#($urandom_range(1000000)); // Random amount of time echo stays high
-		echo = 0;
-		#($urandom_range(1000000)); // Random amount of time echo stays low
-	end
-	reset = 1;
-	
-	#(500 * CLK_PERIOD)
-	reset = 0;
-	echo = 1;
-	#(1000000 * CLK_PERIOD)
-	echo = 0;
-	#(1000000 * CLK_PERIOD)
-	echo = 1;
-	#(50000 * CLK_PERIOD)
-	echo = 0;
-	#(50000 * CLK_PERIOD)
+    // Test case: Press and release reset button (KEY[2])
+    #(1 * CLK_PERIOD);
+	 KEY[0] = 0; 
+	 uut.enable = 1;
+	 // Simulate reset button press
+    #(1 * CLK_PERIOD);
+    GPIO_drive[34] = 1;   // Release reset button
+	 KEY[0] = 0;
+	 
 
-	
-	
-	#(10 * CLK_PERIOD)
-	
-	$finish();
+
+    // Simulate trigger and echo interaction
+	 repeat(5) begin
+    #(10000 * CLK_PERIOD);
+    GPIO_drive[34] = 1'b0; // Echo starts low
+
+    #(1 * CLK_PERIOD);
+    GPIO_drive[34] = 1;    // Set echo high after trigger
+
+
+    #(500 + $urandom_range(0, 100000));
+    GPIO_drive[34] = 0;    // Set echo low after some random delay
+	 
+	 end
+
+    // Finish simulation
+    #(10 * CLK_PERIOD);
+    $finish;
 end
 
 endmodule
