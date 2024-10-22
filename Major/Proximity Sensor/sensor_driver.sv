@@ -49,7 +49,7 @@ module sensor_driver#(parameter ten_us = 10'd500)(
           case(state)
             IDLE:
               begin
-                state <= (measure & ready) ? TRIGGER : state;
+                state <= (measure && ready) ? TRIGGER : state;
               end
             TRIGGER:
               begin
@@ -122,19 +122,28 @@ module sensor_driver#(parameter ten_us = 10'd500)(
 endmodule
 
 // timer used to measure distance at 250ms intervals - not used in top level
-module refresher250ms(
+module refresher333us(
   input clk,
   input en,
-  output measure);
-  reg [24:0] counter;
+  output reg measure); // Change output to 'reg' type
+    reg [22:0] counter; // 26-bit counter to count up to 50,000,000
 
-  assign measure = (counter == 25'd1);
+always@(posedge clk)
 
-  always@(posedge clk)
     begin
-      if(~en | (counter == 25'd12_500_000))
-        counter <= 25'd0;
+      if (~en)
+        begin
+          counter <= 22'd0;
+          measure <= 22'b0;
+        end
+      else if (counter == 22'd5_000_000)
+        begin
+          counter <= 22'd0;
+          measure <= ~measure; // Toggle the measure signal
+        end
       else
-        counter <= 25'd1 + counter;
+        counter <= counter + 22'd1;
     end
 endmodule
+
+
