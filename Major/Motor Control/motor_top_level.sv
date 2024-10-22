@@ -1,4 +1,4 @@
-module top_level (
+module motor_top_level (
       input  		  CLOCK_50,
       input  [17:0] SW,
 		input	 [7:0]  KEY,
