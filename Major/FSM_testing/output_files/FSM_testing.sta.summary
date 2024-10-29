@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -3.053
+TNS   : -57.989
+
+Type  : Slow 1200mV 85C Model Setup 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : -1.936
+TNS   : -7.259
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.642
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : 1.329
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -33.840
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -2.729
+TNS   : -51.302
+
+Type  : Slow 1200mV 0C Model Setup 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : -1.649
+TNS   : -6.183
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.586
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : 1.206
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -33.840
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : -1.285
+TNS   : -5.140
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.973
+TNS   : -14.862
+
+Type  : Fast 1200mV 0C Model Setup 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : -0.452
+TNS   : -1.516
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.292
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : 0.625
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -34.058
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'transmission_timer:u_slow_clock|countMilliseconds[0]'
+Slack : -1.000
+TNS   : -4.000
+
+------------------------------------------------------------

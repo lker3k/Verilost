@@ -1,0 +1,82 @@
+module robot_fsm (
+    input logic bell,
+    input logic [31:0] hex_data,
+    input logic [7:0] distance,
+    input logic proximity,
+    input logic [2:0] pixel_location,
+    input logic [1:0] color_mode,
+    input logic CLOCK_50,
+    input logic [1:0] KEY,   // Assuming KEY[0] is used for reset, and KEY[1] could be button1
+    output logic overwrite,
+    output [4:0] motor_state
+);
+
+    typedef enum logic [4:0] {
+        MOTOR_STOP    = 5'b00001,
+        MOTOR_FORWARD = 5'b00010,
+        MOTOR_RIGHT   = 5'b00100,
+        MOTOR_LEFT    = 5'b01000,
+        MOTOR_SPIN    = 5'b10000
+    } motor_state_t;
+
+    enum { IDLE, SEARCH, FORWARD, LEFT, RIGHT, STOP, ARRIVED, RESET1, RESET2, ABORT } next_state, current_state = IDLE;
+
+    // State transition logic
+    always_comb begin
+        case (current_state)
+            IDLE:       next_state =    (bell == 1) ? SEARCH : IDLE; 
+            SEARCH:     next_state =    (pixel_location == 3'b010) ? FORWARD : SEARCH;
+            FORWARD:    next_state =    (proximity == 1) ? STOP : 
+                                        (bell == 1) ? RESET2 :
+                                        (pixel_location == 3'b010) ? FORWARD :
+                                        (pixel_location == 3'b001) ? RIGHT :
+                                        (pixel_location == 3'b100) ? LEFT : SEARCH;
+            RIGHT:      next_state =    (proximity == 1) ? STOP : 
+                                        (bell == 1) ? RESET2 :
+                                        (pixel_location == 3'b010) ? FORWARD :
+                                        (pixel_location == 3'b001) ? RIGHT :
+                                        (pixel_location == 3'b100) ? LEFT : SEARCH;
+            LEFT:       next_state =    (proximity == 1) ? STOP : 
+                                        (bell == 1) ? RESET2 :
+                                        (pixel_location == 3'b010) ? FORWARD :
+                                        (pixel_location == 3'b001) ? RIGHT :
+                                        (pixel_location == 3'b100) ? LEFT : SEARCH;
+            STOP:       next_state =    (pixel_location == 3'b010) ? ARRIVED : (bell == 1) ? RESET2 : STOP;
+            ARRIVED:    next_state =    RESET1;
+            RESET1:     next_state =    (KEY[1]) ? IDLE : RESET2;
+            RESET2:     next_state =    SEARCH;
+            default:    next_state = IDLE;
+        endcase
+    end
+
+    // FSM state variable flip-flops
+    always_ff @(posedge CLOCK_50) begin
+        if (~KEY[0]) begin
+            current_state <= IDLE;
+        end else begin
+            current_state <= next_state;
+        end
+    end
+
+    // Output logic
+    always_comb begin : output_logic
+        motor_state = MOTOR_STOP;
+        overwrite = 0;
+        case (current_state)
+            IDLE:       motor_state = MOTOR_STOP;
+            SEARCH:     motor_state = MOTOR_SPIN;
+            FORWARD:    motor_state = MOTOR_FORWARD;
+            LEFT:       motor_state = MOTOR_LEFT;
+            RIGHT:      motor_state = MOTOR_RIGHT;
+            STOP:       motor_state = MOTOR_STOP;
+            ARRIVED:    motor_state = MOTOR_STOP;
+            RESET1:     motor_state = MOTOR_STOP;
+            RESET2: begin
+                motor_state = MOTOR_STOP;
+                overwrite = 1;
+            end
+            default:    motor_state = MOTOR_STOP;
+        endcase
+    end
+
+endmodule

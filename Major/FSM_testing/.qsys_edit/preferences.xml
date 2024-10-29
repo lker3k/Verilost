@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="47" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library,Project,Library/Processors and Peripherals,Library/University Program,Library/University Program/Clock" />
+ <window width="3488" height="2072" x="-16" y="-16" />
+</preferences>

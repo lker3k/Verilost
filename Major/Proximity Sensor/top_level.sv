@@ -44,7 +44,7 @@ end
     .button_edge(reset)
 );*/
 
-refresher333us measure_interval(
+refresher100ms measure_interval(
 	.clk(CLOCK_50),
 	.en(enable),
 	.measure(start)
@@ -58,7 +58,7 @@ sensor_driver u0(
   .echo(echo),
   .trig(trigger), 
   .distance(LEDR),
-  .proximity_sensor(proximity_sensor);
+  .proximity_sensor(proximity_sensor));
   
 
   
