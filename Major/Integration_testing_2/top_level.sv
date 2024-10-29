@@ -47,28 +47,28 @@ module top_level(
 
 );
 
-logic bell;
+	logic bell;
 
-logic [31:0] hex_data;
+	logic [31:0] hex_data;
 
 
-logic [7:0] distance;
-logic proximity;
-
-logic [2:0] pixel_location;
-logic [1:0] color_mode;
+	logic [7:0] distance;
+	logic proximity;
+	logic [4:0] motor_state;
+	logic [2:0] pixel_location;
+	logic [1:0] color_mode;
 
 robot_fsm  u_fsm (
-						.clk(CLOCK_50),
-						.reset(~KEY[0]),
-						.bell(bell),
-						.proximity(proximity),
-						.pixel_location(pixel_location),
-						.button1(button1),
-						.overwrite(overwrite),
-						.motor_state(motor_state),
-						.state_logic(LEDR[8:0])
-						);
+	.clk		(CLOCK_50),
+	.reset		(~KEY[0]),
+	.bell		(bell),
+	.proximity	(proximity),
+	.pixel_location	(pixel_location),
+	.button1	(button1),
+	.overwrite	(overwrite),
+	.motor_state	(motor_state),
+	.state_logic	(LEDR[8:0])
+);
 
 						/*
 microphone u_microphone	(
@@ -91,27 +91,27 @@ assign bell = SW[0];
 
 
 								
-IR_control u_IR			(
-								.clk(CLOCK_50),
-								.reset(KEY[0]),
-								.sd_DAT(SD_DAT),
-								.hsmc_d(HSMC_D),
-								.ex_io(EX_IO),
-								.irda_rxd(IRDA_RXD),
-								.aud_adclrck(AUD_ADCLRCK),
-								.aud_daclrck(AUD_DACLRCK),
-								.gpio(GPIO),
-								.overwrite(overwrite),
-								.hex_output(hex_data),
-								.HEX0(HEX0),
-								.HEX1(HEX1),
-								.HEX2(HEX2),
-								.HEX3(HEX3),
-								.HEX4(HEX4),
-								.HEX5(HEX5),
-								.HEX6(HEX6),
-								.HEX7(HEX7)
-								);
+IR_control u_IR	(
+	.clk		(CLOCK_50),
+	.reset		(KEY[0]),
+	.sd_DAT		(SD_DAT),
+	.hsmc_d		(HSMC_D),
+	.ex_io		(EX_IO),
+	.irda_rxd	(IRDA_RXD),
+	.aud_adclrck	(AUD_ADCLRCK),
+	.aud_daclrck	(AUD_DACLRCK),
+	.gpio		(GPIO),
+	.overwrite	(overwrite),
+	.hex_output	(hex_data),
+	.HEX0		(HEX0),
+	.HEX1		(HEX1),
+	.HEX2		(HEX2),
+	.HEX3		(HEX3),
+	.HEX4		(HEX4),
+	.HEX5		(HEX5),
+	.HEX6		(HEX6),
+	.HEX7		(HEX7)
+);
 logic button1, button2, button3;
 
 assign button1 = (hex_data[31:16] == 16'hfe01);
@@ -134,41 +134,41 @@ always_comb begin
 end				
 
 logic [11:0] pixel_value;								
-camera u_camera			(
-								.clk(CLOCK_50),
-								.reset(KEY[0]),
-								.operation_mode(pixel_location),
-								.color_mode(color_mode),
-								.vga_hs(VGA_HS),
-								.vga_vs(VGA_VS),
-								.vga_r(VGA_R),
-								.vga_g(VGA_G),
-								.vga_b(VGA_B),
-								.vga_blank_n(VGA_BLANK_N),
-								.vga_sync_n(VGA_SYNC_N),
-								.vga_clk(VGA_CLK),
-								.gpio(GPIO),
-								.pixel_value(pixel_value),
-								.led_config(LEDG[0])
-								);
+camera u_camera	(
+	.clk		(CLOCK_50),
+	.reset		(KEY[0]),
+	.operation_mode	(pixel_location),
+	.color_mode	(color_mode),
+	.vga_hs		(VGA_HS),
+	.vga_vs		(VGA_VS),
+	.vga_r		(VGA_R),
+	.vga_g		(VGA_G),
+	.vga_b		(VGA_B),
+	.vga_blank_n	(VGA_BLANK_N),
+	.vga_sync_n	(VGA_SYNC_N),
+	.vga_clk	(VGA_CLK),
+	.gpio		(GPIO),
+	.pixel_value	(pixel_value),
+	.led_config	(LEDG[0])
+);
 //assign color_mode = SW[1:0];
 assign LEDG[3:1] = pixel_location;
 //assign LEDR[11:0] = pixel_value;
 
 proximity u_proximity	(
-								.clk(CLOCK_50),
-								.gpio(GPIO),
-								.distance(distance),
-								.proximity_sensor(proximity)
-								);
+	.clk			(CLOCK_50),
+	.gpio			(GPIO),
+	.distance		(distance),
+	.proximity_sensor	(proximity)
+);
 assign LEDG[5] = proximity;
 		
-motor u_motor				(
-								.clk(CLOCK_50),
-								.reset(~KEY[0]),
-								.motor_cmd(motor_state),
-								.gpio(GPIO)
-								);
+motor u_motor	(
+	.clk		(CLOCK_50),
+	.reset		(~KEY[0]),
+	.motor_cmd	(motor_state),
+	.gpio		(GPIO)
+);
 		
 assign  LEDR[17:13] = motor_state;
 always_comb begin
