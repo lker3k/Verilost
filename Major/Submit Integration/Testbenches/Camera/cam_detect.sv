@@ -4,8 +4,8 @@ module cam_detect(
 	input logic [11:0]	in_data, 		// 12bit RGB pixel
 	input logic [1:0]		color_mode, 	// 4 color mode for 3 table colour (rgb) and 1 for the kitchen
 	
-	input logic [18:0]	row,
-	input logic [18:0]	col,
+	//input logic [18:0]	row,
+	//input logic [18:0]	col,
 	
 	
 	
@@ -61,9 +61,9 @@ module cam_detect(
 	typedef enum logic [2:0] {LEFT = 3'b100, RIGHT = 3'b001, MIDDLE = 3'b010, NO_COLOR = 3'b000} operate_t;
 	
 	
-	//integer row = 0, col = 0;	// pixel address of the camera
+	integer row = 0, col = 0;	// pixel address of the camera
 	
-	/*
+	
 	always_ff @(posedge clk) begin
 		if(reset) begin
 			row <= 0;
@@ -77,7 +77,7 @@ module cam_detect(
 			end else col <= col + 1;
 		end
 	end
-	*/
+	
 
 	logic [$clog2(image_height) + 1: 0] sum [0:image_width-1]; // summing all of the pixels
 	
