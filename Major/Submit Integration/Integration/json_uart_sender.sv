@@ -71,10 +71,10 @@ module json_uart_sender (
                   uart_valid <= 1'b1;
                   uart_data <= instructions[0];
                   instruction_index <= 1;
-            end else if (uart_valid && uart_ready) begin
+	    end else if (uart_valid && uart_ready) begin // continue sending on handshake
 					if (instruction_index >= N_INSTRS) begin
 						// Finished sending the JSON string
-						uart_valid <= 1'b0;
+						uart_valid <= 1'b0; // data is no longer valid
                end
 					// Continue sending the next byte
 					uart_data <= instructions[instruction_index];
