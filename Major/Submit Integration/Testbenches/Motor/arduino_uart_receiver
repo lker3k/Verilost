@@ -1,0 +1,23 @@
+void setup() {
+  // Initialize Serial communication at 115200 baud rate
+  Serial.begin(115200);
+
+  // Wait for the serial port to be ready
+  while (!Serial) {
+    ; // Wait for Serial to be initialized
+  }
+
+  Serial.println("UART ready. Waiting for incoming data...");
+}
+
+void loop() {
+  // Check if data is available on the serial port
+  if (Serial.available() > 0) {
+    // Read the incoming byte
+    char incomingByte = Serial.read();
+
+    // Echo the received byte back to the serial monitor
+    Serial.print("Received: ");
+    Serial.println(incomingByte);
+  }
+}
