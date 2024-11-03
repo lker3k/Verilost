@@ -75,7 +75,7 @@ module robot_fsm (
 								.enable			(1),					// this timer will always run
 								.timer_value	(timer_value)
 							);
-	logic trigger;
+	logic trigger; // slower pulse based on the timer
     // FSM state variable flip-flops
     always_ff @(posedge trigger) begin
         if (reset) begin
@@ -87,7 +87,8 @@ module robot_fsm (
     end
 	 
 	 logic overwrite_old;
-	 
+
+	// latches the overwrite state
 	 always_ff @(posedge trigger) begin
 		if (reset) begin
 			overwrite_old <= 0;
