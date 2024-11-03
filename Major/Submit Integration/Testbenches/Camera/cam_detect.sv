@@ -13,8 +13,8 @@ module cam_detect(
 );
 
 	localparam NumColourBits = 12;
-	localparam image_width = 320;
-	localparam image_height = 240;
+	localparam image_width = 10;
+	localparam image_height = 10;
 	
 	// the size is 320x240 - 320 col, 240 row
 	
