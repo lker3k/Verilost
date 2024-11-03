@@ -64,13 +64,13 @@ module json_uart_sender (
       // State machine to send the JSON string
       always_ff @(posedge clk or posedge rst) begin
             if (rst) begin
-                  instruction_index <= 0;
-                  uart_valid <= 1'b0;
+                  instruction_index 	<= 0;
+                  uart_valid 		<= 1'b0;
             end else if (!uart_valid && trigger) begin
                   // Start sending the first byte when UART is ready
-                  uart_valid <= 1'b1;
-                  uart_data <= instructions[0];
-                  instruction_index <= 1;
+                  uart_valid 		<= 1'b1;	
+		    uart_data 		<= instructions[0];	// start of packet
+                  instruction_index 	<= 1;			// start of packet
             end else if (uart_valid && uart_ready) begin
 					if (instruction_index >= N_INSTRS) begin
 						// Finished sending the JSON string
