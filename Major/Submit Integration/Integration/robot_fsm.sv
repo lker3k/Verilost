@@ -1,30 +1,18 @@
 module robot_fsm (
     input logic bell,
     input logic proximity,
-    input logic [2:0] pixel_location,
+	input logic [2:0] pixel_location,
     input logic clk,
-    input logic reset,   // Assuming KEY[0] is used for reset, and KEY[1] could be button1
-	 input logic button1,
+    input logic reset,   
+    input logic button1,		// this is the red button from the IR remote
 	 
-    output logic overwrite,
+    output logic overwrite,		// sets the IR module as if the red button was pressed
     output [4:0] motor_state,
-	 output [8:0] state_logic
+	output [8:0] state_logic	// led test signals showing the state, not connected in final project
 	 
 );
-		/*
-	logic bell;
-	logic proximity;
-	logic [2:0] pixel_location;
-	logic button1;
-	logic overwrite;
-	
-	assign bell = SW[0];
-	assign proximity = SW[1];
-	assign pixel_location = SW[4:2];
-	assign button1 = SW[5];
-	assign overwrite = LEDG[0];
-	*/
-	
+
+// state encoding for output motor states
     typedef enum logic [4:0] {
         MOTOR_STOP    = 5'b00001,
         MOTOR_FORWARD = 5'b00010,
@@ -32,7 +20,6 @@ module robot_fsm (
         MOTOR_LEFT    = 5'b01000,
         MOTOR_SPIN    = 5'b10000
     } motor_state_t;
-	
 	motor_state_t motor_state_out;
 	
     enum { IDLE, SEARCH, FORWARD, LEFT, RIGHT, STOP, ARRIVED, RESET1, RESET2, ILLEGAL} next_state, current_state;
@@ -40,40 +27,45 @@ module robot_fsm (
     // State transition logic
     always_comb begin
         case (current_state)
-            IDLE:       next_state =    (bell == 1) ? SEARCH : IDLE; 
+	    IDLE:       next_state =    (bell == 1) ? SEARCH : IDLE; 	// begin search on bell trigger
+
+		// set direction based on colour location
             SEARCH:     next_state =    (pixel_location == 3'b010) ? FORWARD :
                                         (pixel_location == 3'b001) ? RIGHT :
                                         (pixel_location == 3'b100) ? LEFT : SEARCH;
-            FORWARD:    next_state =    (proximity == 1) ? STOP : 
-                                        //(bell == 1) ? RESET2 :
-                                        (pixel_location == 3'b010) ? FORWARD :
+		// stop if object detected, set direction based on colour location
+	    FORWARD:    next_state =    (proximity == 1) ? STOP : 
+                                        (pixel_location == 3'b010) ? FORWARD :		
                                         (pixel_location == 3'b001) ? RIGHT :
                                         (pixel_location == 3'b100) ? LEFT : SEARCH;
             RIGHT:      next_state =    (proximity == 1) ? STOP : 
-                                        //(bell == 1) ? RESET2 :
                                         (pixel_location == 3'b010) ? FORWARD :
                                         (pixel_location == 3'b001) ? RIGHT :
                                         (pixel_location == 3'b100) ? LEFT : SEARCH;
             LEFT:       next_state =    (proximity == 1) ? STOP : 
-                                        //(bell == 1) ? RESET2 :
                                         (pixel_location == 3'b010) ? FORWARD :
                                         (pixel_location == 3'b001) ? RIGHT :
                                         (pixel_location == 3'b100) ? LEFT : SEARCH;
+		// robot has arrived at the table if there is an obstacle and the colour is infront of the robot
+		// can sometimes cause issues if approaching the table at an angle
             STOP:       next_state =    (proximity == 0) ? SEARCH :
-													 (pixel_location == 3'b010) ? ARRIVED : 
-													 //(bell == 1) ? RESET2 : 
-													 STOP;
+					(pixel_location == 3'b010) ? ARRIVED : 
+					STOP;
+		
             ARRIVED:    next_state =    RESET1;
+		// reset handling, if the destination is red (button1) then it has arrived at the kitchen
+		// otherwise it waits for the bell to ring before continuing
             RESET1:     next_state =    (button1) ? IDLE : (bell == 1) ? RESET2 : RESET1;
+		// state used to set overwrite
             RESET2:     next_state =    SEARCH;
 				//ILLEGAL: 	next_state = 	 (SW[17]) ? IDLE : ILLEGAL;
             default:    next_state = IDLE;
         endcase
     end
 
-	 
-	logic [$clog2(500)-1:0] timer_value;
-			
+
+	// timer initialisation
+	logic [$clog2(500)-1:0] timer_value;		
 	transmission_timer #(
 								.MAX_MS 			(100),            // Maximum millisecond value
 								.CLKS_PER_MS 	(50000)				// 50000 clock cylces per ms (clock 50)
@@ -148,11 +140,11 @@ module robot_fsm (
 					state_logic[7] = 1;
 				end
             RESET2: begin
-                motor_state_out = MOTOR_STOP;
-                overwrite = 1;
+                			motor_state_out = MOTOR_STOP;
+                			overwrite = 1;
 					 state_logic[8] = 1;
             end
-				//ILLEGAL: LEDR[16] = 1;
+
             default:    motor_state_out = MOTOR_STOP;
         endcase
     end
